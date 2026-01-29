@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .header {
+            background-color: blueviolet;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content"></div>
+    <div class="title"></div>
+
+    <script>
+        /* querySelector() */
+        const contentEl = document.querySelector('.content');
+        console.log(contentEl)
+
+
+        /* createElement() */
+        const h1El = document.createElement('h1');
+        console.log(h1El)
+
+
+        /* append() */
+        /* prepend() */
+        contentEl.append(h1El);
+        const headerEl = document.createElement('header');
+        contentEl.prepend(headerEl);
+
+
+        /* createTextNode() - создание текстового узла DOM-элемента */
+        const textTitle = document.createTextNode('new heading node');
+        //console.log(textTitle);
+        h1El.append(textTitle);
+        h1El.textContent = 'Heading title Element';
+
+
+        /* Element.innerHTML - получение или добавление html-разметки*/
+        headerEl.innerHTML = '<span>text header</span>';
+
+
+        /* Шаблонные строки `text ${vars} text` */
+        const userName = 'John';
+        h1El.textContent = `Heading title element ${userName}`;
+
+
+        /* Создание inline-стилей : element.style.nameStyle */
+        h1El.style.color = 'forestgreen';
+        h1El.style.backgroundColor = 'grey';
+
+
+        /* Работа с классами */
+        /* add() - Добавление класса */
+        /* remove() - Удаление класса */
+        /* contains() - Содержит ли класс */
+
+        headerEl.classList.add("header");
+        const titleEl = document.querySelector('.title');
+        titleEl.classList.remove('title');
+
+        console.log(headerEl.classList.contains('header'));
+
+        headerEl.classList.remove('header');
+
+        headerEl.classList.toggle('header');
+
+    </script>
+
+</body>
+</html>

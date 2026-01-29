@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+
+        .block {
+            width: 200px;
+            height: 100px;
+            background-color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title">Lorem ipsum dolor sit amet.</h1>
+    <button class="button">text button</button>
+    <br>
+    <div class="content">
+        <button class="btn">add block</button>
+    </div>
+
+
+    <button class="myButton">Увеличить счётчик</button>
+    <p class="counter">Счётчик: 0</p>
+
+
+<script>
+    const buttonElement = document.querySelector('.button');
+    const titleElement = document.querySelector('.title');
+
+    buttonElement.onclick = function () {
+        console.log('hello click');
+        titleElement.textContent = 'New text click';
+        //buttonElement.style.color = 'blue';    // or
+        buttonElement.classList.toggle('blue');
+    }
+
+    const contentElement = document.querySelector('.content');
+    const btnElement = document.querySelector('.btn');
+
+    const blockElement = document.createElement('div');
+    blockElement.classList.add('block');
+    blockElement.textContent = 'new block';
+
+    btnElement.onclick = function () {
+        contentElement.append(blockElement);
+    }
+
+
+    /*
+    Вы хотите создать счётчик, который увеличивается на единицу при каждом клике на кнопку.
+    Вам нужно использовать свойство onclick кнопки и отображать текущее значение счётчика на странице.
+    */
+
+    let count = 0;
+    const counterElement = document.querySelector(".counter");
+    const myButton = document.querySelector(".myButton");
+    function increaseCounter() {
+        count++;
+        counterElement.textContent = "Счётчик: " + count;
+    }
+    myButton.onclick = increaseCounter;
+
+</script>
+</body>
+</html>

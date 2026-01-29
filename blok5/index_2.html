@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="content"></div>
+<script>
+
+  /* добавить <div class=”content”></div>, затем с помощью JS создать заголовок <h2> и параграф <p>
+  и добавьте эти элементы в  <div class=”content”></div> */
+
+  // Находим родительский элемент по классу
+  const parentElement = document.querySelector('.content');
+  // Создаём заголовок <h2>
+  const heading = document.createElement('h2');
+  // Создаём параграф <p>
+  const paragraph = document.createElement('p');
+  // Добавляем заголовок и параграф в родительский элемент
+  parentElement.append(heading);
+  parentElement.append(paragraph);
+
+  /* Внутри заголовка <h2> добавьте текст «Название статьи», а внутри параграфа добавьте произвольный текст.*/
+
+  // Находим родительский элемент по классу
+  const parentElement = document.querySelector('.content');
+  // Создаём заголовок h2
+  const heading = document.createElement('h2');
+  heading.textContent = 'Название статьи';
+  // Создаём параграф p
+  const paragraph = document.createElement('p');
+  paragraph.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ' +
+          'Porro repellat temporibus, ex odit id dolor earum accusamus sequi impedit iure asperiores ' +
+          'autem cupiditate aliquam tempora dicta velit fugit odio debitis!';
+  // Добавляем заголовок и параграф в родительский элемент
+  parentElement.appendChild(heading);
+  parentElement.appendChild(paragraph);
+
+</script>
+
+</body>
+</html>

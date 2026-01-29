@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /* КОЛЛБЭК */
+    //function firstFunc() {
+    //  console.log("first function");
+    //}
+    //function secondFunc(firstFunc) { // это и есть коллбэк, когда мы внутри одной функции передаем другую, которая уже выполнилась
+    //  console.log("second function");
+    //}
+    //firstFunc();
+    //secondFunc();
+
+
+    function hello(name) {
+      console.log(`Hello ${name}`);
+    }
+
+    function sayHello(callback) {
+      const userName = prompt("What is your name?");
+      callback(userName);
+    }
+
+    sayHello(hello);
+
+    /* Hеобходимо создать функцию processUserInput, которая запрашивает у пользователя его возраст с текстом
+    «Пожалуйста, введите ваш возраст», а затем вызывает переданную ей функцию обратного вызова callback,
+    передавая этот возраст. Вам нужно написать функцию обратного вызова, которая будет получать возраст пользователя
+    и выводить сообщение в зависимости от его значения:
+            «Добро пожаловать на наш взрослый сайт!», если возраст 18 и более лет;
+            «Извините, доступ только для совершеннолетних», если возраст меньше 18 лет.*/
+
+    function greeting(age) {
+      if (age >= 18) {
+        alert("Добро пожаловать на наш взрослый сайт!");
+      } else {
+        alert("Извините, доступ только для совершеннолетних");
+      }
+    }
+
+    function processUserInput(callback) {
+      const age = prompt('Пожалуйста, введите ваш возраст');
+      callback(age);
+    }
+    processUserInput(greeting);
+  </script>
+</body>
+</html>
