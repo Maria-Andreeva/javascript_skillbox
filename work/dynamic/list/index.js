@@ -3,7 +3,7 @@ buttonAddEl.textContent = 'Добавить элемент'
 buttonAddEl.classList.add('button__add')
 document.body.appendChild(buttonAddEl)
 
-const buttonDelEl =  document.createElement('button')
+const buttonDelEl = document.createElement('button')
 buttonDelEl.textContent = 'Удалить элемент'
 buttonDelEl.classList.add('button__del')
 document.body.appendChild(buttonDelEl)
