@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - тег input</title>
+</head>
+<body>
+
+    <form class="form" action="#" method="post">
+        
+        <input type="text" placeholder="text">
+        <input type="search" placeholder="search">
+        <input type="url" placeholder="link">
+        <input type="tel" placeholder="phone">
+        <input type="email" placeholder="mail">
+        <input type="number" placeholder="number">
+        <!--<input type="submit">-->
+        <button type="submit">Отправить</button>
+    </form>
+    
+    <script>
+
+        /*Атрибуты тега input*/
+        // type = 'submit'
+        // type = 'text'
+        // type = 'search'
+        // type = 'url'
+        // type = 'tel'
+        // type = 'email'
+        // type = 'number'
+
+        const inputEls = document.querySelectorAll('input');
+        console.log(inputEls);
+        const buttonEl = document.querySelector('button');
+
+        inputEls.forEach(inputEl => {
+            //console.log(inputEl);
+            buttonEl.addEventListener('click', function (e) {
+                if (inputEl.value == '') {
+                    e.preventDefault();
+                    console.log(inputEl);
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

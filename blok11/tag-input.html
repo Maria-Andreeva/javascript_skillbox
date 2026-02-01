@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с тегом input</title>
+</head>
+<body>
+    <form>
+        <label>
+            <input type="checkbox" name="checkbox" value="checkbox_value" checked> Флажок
+        </label>
+        <label>
+            <input type="radio" name="radio" value="radio_value1" checked> Радиокнопка 1
+        </label>
+        <label>
+            <input type="radio" name="radio" value="radio_value2"> Радиокнопка 2
+        </label>
+        <label>
+            Цвет:
+            <input type="color" name="color">
+        </label>
+        <label>
+            Дата:
+            <input type="date" name="date">
+        </label>
+        <label>
+            Файл:
+            <input type="file" name="file">
+        </label>
+        <label>
+            Диапазон:
+            <input type="range" name="range" min="0" max="100" step="1">
+        </label>
+        <input type="submit" value="Отправить">
+    </form>
+
+    <form>
+        <input class="date" type="date">
+        <input id="pi_input" type="range" min="0" max="3.14" step="any" />
+        <p>Value: <output id="value"></output></p>
+    </form>
+
+    <form>
+        <input class="date" type="date" value="1994-02-20">
+        <button class="button" type="submit">Отправить</button>
+    </form>
+
+    <script>
+
+        /*Атрибуты тега input*/
+
+        // Checkbox
+        // Radio
+        // Color
+        // Date
+        // File
+        // Range
+
+        /*const value = document.querySelector('#value');
+        const input = document.querySelector('#pi_input');
+        value.textContent = input.value;
+        input.addEventListener('input', (event) => {
+            value.textContent = event.target.value;
+        });*/
+
+        const dateEl = document.querySelector('.date');
+        const buttonEl = document.querySelector('.button')
+
+        buttonEl.addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log(dateEl.value);
+        })
+
+    </script>
+</body>
+</html>

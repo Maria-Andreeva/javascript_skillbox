@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Всплытие и погружение</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            <button class="button">Нажми меня</button>
+        </div>
+    </div>
+    <script>
+        // Это два механизма обработки собыий в JS, которые происходят при вложенных элементах DOM
+        // Они описыват порядок распространения событий:
+        // * погружение (capturing) - от родительских элементов к дочерним
+        // * всплытие (bubbling) - от дочерних элементов к родительским
+
+        const outerEl = document.querySelector('.outer');
+        const innerEl = document.querySelector('.inner');
+        const buttonEl = document.querySelector('.button');
+
+        outerEl.addEventListener('click', function () {
+            console.log('Родительский элемент (всплытие)');
+        }, true);
+        
+        innerEl.addEventListener('click', function () {
+            console.log('Дочерний элемент');
+        }, true);
+
+        buttonEl.addEventListener('click', function (event) {
+            event.stopPropagation();
+            console.log('Целевой элемент (кнопка)');
+        }, true);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Методы полей и обработка событий</title>
+</head>
+<body>
+    <form class="form" action="#">
+        <input class="input" type="text">
+        <input class="input2" type="text">
+        <button class="button">reset</button>
+        <button type="submit">отправить</button>
+    </form>
+    <script>
+
+        /*Виды событий*/
+
+        // input
+        // keyup 
+        // load
+        // submit
+        // focus
+        // blur
+        // reset
+        // setCustomValidity
+
+        const inputEl = document.querySelector('.input');
+
+        /*window.addEventListener('load', function (e) {
+            console.log('Сайт загрузился');
+        });
+
+        document.addEventListener('DOMContentLoaded', function (e) {
+            console.log('DOM');
+        });
+
+        inputEl.addEventListener('keyup', function (event) {
+            console.log('Клавиша отпущена keyup. Введенное значение:', event.target.value);
+        });
+        
+        inputEl.addEventListener('input', function (event) {
+            console.log('Клавиша нажата input. Введенное значение:', event.target.value);
+        });*/
+
+        const formEl = document.querySelector('.form');
+
+        /*inputEl.addEventListener('focus', function (e) {
+            console.log('focus');
+        });
+
+        inputEl.addEventListener('blur', function (e) {
+            console.log('Убежал из поля ввода');
+        });
+
+        formEl.addEventListener('submit', function (e) {
+            e.preventDefault();
+            console.log('Отправили значение');
+        });*/
+
+        const buttonEl = document.querySelector('.button');
+
+        /*buttonEl.addEventListener('click', function (e) {
+            inputEl.reset();
+        });*/
+
+        inputEl.addEventListener('invalid', function (e) {
+            inputEl.setCustomValidity('Введите корректное значение');
+        });
+
+        inputEl.addEventListener('input', function (e) {
+            inputEl.setCustomValidity('');
+        });
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика работы с элементами input</title>
+</head>
+<body>
+    <form class="form" action="#">
+        <input class="input" type="text">
+        <button type="submit">Отправить</button>
+    </form>
+
+    <form class="formm" action="#">
+        <input type="text" class="name" required>
+        <input type="email" class="email" required>
+        <input type="submit" value="Отправить">
+    </form>
+
+    <input type="text" class="naming">
+    <input type="text" class="naming2">
+    <script>
+        const inputEl = document.querySelector('.input');
+        const inputElem = document.querySelector('.name');
+        const inputEmail = document.querySelector('.email');
+        const formmEl = document.querySelector('.formm');
+
+        /*inputEl.addEventListener('input', function (e) {
+            if (inputEl.value == '1234') {
+                console.log('Молодец!');
+            }
+        });*/
+
+        /*formmEl.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            console.log(inputElem.value);
+            console.log(inputEmail.value);
+        });*/
+
+        const maxLenght = 5;
+        
+        inputElem.addEventListener('input', function () {
+            const remainingChars = maxLenght - input.value.lenght;
+            if (remainingChars === 0) {
+                console.log('Максимум');
+            }
+            console.log('Осталось символов:', remainingChars);
+        });
+
+
+        const input = document.querySelector('.naming');
+
+        input.addEventListener('focus', function () {
+            input.style.backgroundColor = 'lightblue';
+        });
+
+        input.addEventListener('blur', function () {
+            input.style.backgroundColor = 'white';
+        });
+
+
+
+
+
+    </script>
+</body>
+</html>
