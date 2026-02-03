@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Настройка банковской карты</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Настройка банковской карты</h2>
+
+    <label>
+      Текст на карте:
+      <input type="text" id="cardText" maxlength="35" placeholder="Введите текст">
+    </label>
+
+    <label>
+      Цвет карты:
+      <select id="colorSelect">
+        <option value="">Выберите цвет</option>
+        <option value="red">Красный</option>
+        <option value="blue">Синий</option>
+        <option value="green">Зелёный</option>
+        <option value="pink">Розовый</option>
+        <option value="yellow">Жёлтый</option>
+        <option value="lightblue">Голубой</option>
+        <option value="violet">Фиолетовый</option>
+        <option value="grey">Серый</option>
+        <option value="black">Черный</option>
+        <option value="multicolor">Разноцветный</option>
+      </select>
+    </label>
+
+    <p id="card">Ваша карта</p>
+  </div>
+
+ <script src="script.js"></script>
+</body>
+</html>
