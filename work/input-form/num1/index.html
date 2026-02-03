@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма опроса</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="heading">Форма опроса</h1>
+
+<div class="content">
+    <form class="form" action="#">
+
+        <div class="label-row">
+            <span>Имя пользователя: *</span>
+            <input type="text" name="name" placeholder="Name" required>
+            <div class="error" id="nameError"></div>
+        </div>
+
+        <div class="label-row">
+            <span>Email: *</span>
+            <input type="email" name="mail" placeholder="Email" required>
+            <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="label-row">
+            <span>Пол:</span>
+            <div class="radio-group">
+                <label class="radio-item">
+                    <input type="radio" name="gender" value="man" checked> Мужской
+                </label>
+                <label class="radio-item">
+                    <input type="radio" name="gender" value="woman"> Женский
+                </label>
+            </div>
+        </div>
+
+        <div class="label-row">
+            <span>Оценка сервиса:</span>
+            <input type="range" name="range" min="0" max="10" step="1" value="50">
+        </div>
+
+        <div class="label-column">
+            <span>Интересы пользователя:</span>
+            <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="sport"> Спорт
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="music"> Музыка
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="travel"> Путешествия
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="films"> Кино
+            </label>
+        </div>
+
+        <div class="label-column">
+            <span>Дополнительные комментарии:</span>
+            <textarea maxlength="150" rows="5"></textarea>
+        </div>
+
+        <button class="button" type="submit">Отправить</button>
+
+    </form>
+
+</div>
+
+<h2 class="heading" id="resultTitle" style="display:none;">Результаты опроса</h2>
+
+<div class="content">
+
+    <div id="resultBlock" style="display:none;" class="result">
+        <p><strong>Имя:</strong> <span id="resName"></span></p>
+        <p><strong>Email:</strong> <span id="resEmail"></span></p>
+        <p><strong>Пол:</strong> <span id="resGender"></span></p>
+        <p><strong>Оценка сервиса:</strong> <span id="resRating"></span></p>
+        <p><strong>Интересы:</strong> <span id="resInterests"></span></p>
+        <p><strong>Комментарии:</strong> <span id="resComment"></span></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
