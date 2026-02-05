@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер со Swiper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+
+        .pic {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slider main container // Главный контейнер слайдера -->
+    <div class="swiper">
+        <!-- Additional required wrapper // Обертка слайдов -->
+        <div class="swiper-wrapper">
+            <!-- Slides // Слайды -->
+            <div class="swiper-slide">
+                <img src="./img/image_1.png" alt="1" class="pic">
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/image_2.png" alt="2" class="pic">
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/image_3.png" alt="3" class="pic">
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/image_4.png" alt="4" class="pic">
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/image_5.png" alt="5" class="pic">
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/image_6.png" alt="6" class="pic">
+            </div>
+        </div>
+        <!-- If we need pagination // Пагинация - если не нужна, можно вырезать -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- If we need navigation buttons // Кнопки навигации - если не нужны, можно вырезать -->
+        <!--<div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>-->
+
+        <!-- If we need scrollbar // Скроллбар - если не нужны, можно вырезать -->
+        <!--<div class="swiper-scrollbar"></div>-->
+    </div>
+
+    <script>
+        /* https://swiperjs.com/ */ 
+        // Swiper - библиотека на JavaScript, которая позволяет создавать слайдеры практически любого типа: 
+        // галерею, ленту товаров или публикаций и так далее. Библиотека удобна большим спектром настроек 
+        // и способов кастомизации, она популярна, часто обновляется и поддерживается разработчиком. 
+        
+        // Алгоритм включает следующие действия:
+        // * Подключение СSS-стилей и JavaScript-файла из библиотеки Swiper.
+        // * Создание HTML-структуры.
+        // * Инициализацию — подключение к DOM-элементу <select>.
+        // * Настройку и стилизацию.
+
+        const swipper = new Swiper('.swiper', {
+            // Optional parameters
+            //direction: 'vertical',
+            direction: 'horizontal',
+            loop: true,
+
+            slidesPerView: 3, // Количество отображаемых слайдов
+            spaceBetween: 10, // Расстояние между слайдами
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            /*navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },*/
+
+            // And if we need scrollbar
+           /* scrollbar: {
+                el: '.swiper-scrollbar',
+            },*/
+        });
+
+    </script>
+    
+</body>
+</html>

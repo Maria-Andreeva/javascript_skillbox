@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валидация формы с JustValidate</title>
+
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        .form {
+            width: 350px;
+        }
+
+        .form__wrap {
+            margin-bottom: 15px;
+        }
+
+        .form__inp {
+            display: block;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="msg-form" class="form">
+        <div class="form__wrap">
+            <input id="name" class="form__inp" type="text" placeholder="Имя">
+        </div>
+        <div class="form__wrap">
+            <input id="email" class="form__inp" type="email" placeholder="Почта">
+        </div>
+        <div class="form__wrap">
+            <input id="age" class="form__inp" type="number" placeholder="Возраст">
+        </div>
+        <div class="form__wrap">
+            <textarea id="msg" class="form__inp"></textarea>
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        // https://just-validate.dev/
+
+        // JustValidate - JavaScript-библиотека для проверки введённых данных в текстовых полях формы 
+        // и отображения подсказок при нарушении правил ввода.
+        // Правило - это условие, при котором введённое значение в текстовом поле считается верным. 
+        // Одному текстовому полю можно задать несколько правил. Проверка формы считается успешной, 
+        // если все поля соответствуют установленным правилам.
+
+        // Алгоритм работы с библиотекой включает следующие действия:
+        // 1. Подключение JavaScript-файла из библиотеки JustValidate.
+        // 2. Инициализацию — подключение к DOM-элементу <form>.
+        // 3. Настройку.
+
+        const validate = new JustValidate('#msg-form');
+
+        validate.addField('#name', [
+            {
+                rule: 'required',
+                errorMessage: 'Введите имя',
+            },
+        ]);
+
+        validate.addField('#email', [
+            {
+                rule: 'required',
+                errorMessage: 'Введите почту',
+            },
+            {
+                rule: 'email',
+                errorMessage: 'Почта введена не верно!',
+            },
+        ]);
+
+        validate.addField('#age', [
+            {
+                rule: 'required',
+                errorMessage: 'Введите возраст',
+            },
+            {
+                rule: 'minNumber',
+                value: 18,
+                errorMessage: 'Минимальный возраст 18',
+            },
+            {
+                rule: 'maxNumber',
+                value: 150,
+                errorMessage: 'Максимальный возраст 150',
+            },
+        ]);
+        validate.addField('#msg', [
+            {
+                rule: 'required',
+                errorMessage: 'Введите сообщение',
+            },
+            {
+                rule: 'minLength',
+                value: 3,
+                errorMessage: 'Минимум 3 символа',
+            },
+            {
+                rule: 'maxLength',
+                value: 100,
+                errorMessage: 'Максимум 100 символов',
+            },
+        ]);
+
+        validate.onSuccess(function () {
+            alert('Проверка пройдена успешно!')
+        })
+
+        /*В этом коде к текстовому полю имени с id=”name” подключается проверка введённых данных. Правило - объект с набором свойств. 
+        В данном случае указано свойство rule - название правила со значением "required", которое проверяет текст на заполнение. Если поле 
+        не будет заполнено, то валидация не будет пройдена и JustValidate покажет текстовое сообщение, которое указано в свойстве errorMessage.*/
+
+    </script>
+    
+</body>
+</html>

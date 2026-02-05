@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip</title>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <style>
+        span {
+            font-weight: bold;
+        }
+        .tippy-box[data-theme~='new-style'] {
+            background-color: tomato;
+            color: yellow;
+        }
+
+        .tippy-box[data-theme~='new-style'][data-placement~='top']>.tippy-arrow:before {
+            border-top-color: tomato;
+        }
+
+        .tippy-box[data-theme~='new-style'][data-placement~='bottom']>.tippy-arrow:before {
+            border-bottom-color: tomato;
+        }
+
+        .tippy-box[data-theme~='new-style'][data-placement~='left']>.tippy-arrow:before {
+            border-left-color: tomato;
+        }
+
+        .tippy-box[data-theme~='new-style'][data-placement~='right']>.tippy-arrow:before {
+            border-right-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript - библиотека</h1>
+    <p><span>JavaScript - библиотека</span> - это набор готовых функций, которые можно подключить и исппользовать в проекте</p>
+    <h2>Алгоритм работы с библиотекой</h2>
+    <ul>
+        <li>Поиск и выбор библиотеки</li>
+        <li>Подключение библиотеки к проекту</li>
+        <li>Настройка и стилизация</li>
+    </ul>
+    <p>Рассмотрим пример библиотеки JS на примере <span>tippy.js</span></p>
+
+    <!-- https://atomiks.github.io/tippyjs/ -->
+    <a id="link" href="#">Ссылка</a>
+
+    <script>
+        // Tippy.js - библиотека для добавиления всплывающей подсказки (tooltip)
+        tippy('#link', {
+            content: 'Подсказка!',
+            trigger: 'click',
+            theme: 'new-style',
+        });
+    </script>
+</body>
+</html>

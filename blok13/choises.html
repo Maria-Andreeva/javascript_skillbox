@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выпадающий список с Choices.js</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        .choices {
+            width: 200px;
+            background-color: gray;
+            color: white;
+        }
+
+        .choices__inner {
+            background-color: gray;
+            color: white;
+        }
+        
+        .choices__list {
+            background-color: gray;
+            color: white;
+        }
+
+        .choices__list--dropdown .choices__item--selectable.is-highlighted {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <select id="city">
+        <option value="" selected disabled hidden>Города</option>
+        <option value="Moscow">Москва</option>
+        <option value="London">Лондон</option>
+        <option value="Beijing">Пекин</option>
+        <option value="Sydney">Сидней</option>
+        <option value="Chicago">Чикаго</option>
+    </select>
+    
+    <script>
+        // https://github.com/Choices-js/
+        // Choices.js - популярная JavaScript-библиотека для кастомизации выпадающего списка <select> 
+        // с большим количеством настроек и возможностями для стилизации в CSS.
+
+        // Алгоритм работы с этой библиотекой, который включает следующие шаги:
+        // * Подключение СSS-стилей и JavaScript-файла библиотеки Choices.js. 
+        // * Инициализацию — подключение к DOM-элементу <select>.
+        // * Настройку и стилизацию.
+
+        const element = document.querySelector('#city');
+        const choices = new Choices(element, {
+            searchEnabled: false,
+            shouldSortItems: false,
+            itemSelectText: "",
+            placeholder: true,
+            placeholderValue: 'Города'
+        });
+
+
+
+    </script>
+</body>
+</html>
