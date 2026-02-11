@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #aeb6bf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.promo-code {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+}
+
+.promo-code__row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.promo-code__input {
+    width: 260px;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #FFFFFF;
+    outline: none;
+    transition: 0.2s;
+}
+
+.promo-code__input::placeholder {
+    color: gray;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.promo-code__input:focus {
+    border-color: #4a8ef0;
+}
+
+.promo-code__btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4a8ef0;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.promo-code__btn:hover {
+    background-color: #3a7ae0;
+    transform: translateY(-2px);
+}
+
+.promo-code__message {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+
