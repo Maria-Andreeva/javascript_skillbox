@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 30px;
+    color: #333;
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #999;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  form input[type="checkbox"] {
+    margin-bottom: 20px;
+  }
+  
+  form button,
+  form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+  }
+  
+  form button:hover,
+  form input[type="submit"]:hover {
+    background-color: #444;
+    cursor: pointer;
+  }
+  
+  table {
+    width: 100%;
+    background-color: #fff;
+    text-align: left;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 5px #999;
+  }
+  
+  th,
+  td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  td {
+    vertical-align: top;
+  }
+
+#form-error {
+  display: none;
+  color: #d10000;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+label[for="sortBy"] {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  font-weight: 600;
+}
+
+#sortBy {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+td button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+td button[data-action="edit"] {
+  background-color: #2d6cdf;
+  color: #fff;
+}
+
+td button[data-action="delete"] {
+  background-color: #d64545;
+  color: #fff;
+}
+
+td button:hover {
+  opacity: 0.9;
+}
