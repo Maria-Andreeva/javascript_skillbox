@@ -23,7 +23,7 @@ async function addFilm(film)  {
             'Content-Type': 'application/json',
             email: 'ovikk@skillbox.ru'
         },
-        body: JSOM.JSON.stringify(film),
+        body: JSON.stringify(film),
     })
 
     renderTable()
